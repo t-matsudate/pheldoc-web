@@ -1,0 +1,33 @@
+{
+  "name": "pheldoc-web",
+  "version": "0.0.1",
+  "description": "Documentations with examples for the Phel.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t-matsudate/pheldoc-web.git"
+  },
+  "keywords": [
+    "phel",
+    "web",
+    "documentation",
+    "laravel",
+    "react",
+    "sass"
+  ],
+  "author": "Tsuyoshi Matsudate",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t-matsudate/pheldoc-web/issues"
+  },
+  "homepage": "https://github.com/t-matsudate/pheldoc-web#readme",
+  "devDependencies": {
+    "laravel-mix": "^6.0.49"
+  }
+}
