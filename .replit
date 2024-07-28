@@ -1,0 +1,5 @@
+run = "php artisan serve --host=0.0.0.0"
+modules = ["php-8.2", "docker", "nodejs-20"]
+
+[nix]
+channel = "stable-24_05"
