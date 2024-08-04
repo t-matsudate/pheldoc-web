@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+main {
+  padding: 2rem;
+
+  & > :not(:last-child) {
+    margin-bottom: 1em;
+  }
+}

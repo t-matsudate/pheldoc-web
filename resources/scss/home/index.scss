@@ -1,0 +1,24 @@
+#home_index {
+  #search {
+    & > * {
+      display: block;
+      margin: 1em 0;
+    }
+
+    label {
+      width: 100%;
+    }
+
+    input {
+      width: calc(100% - 1rem - 4px);
+      height: 2rem;
+      padding: 0 0.5rem;
+    }
+
+    button {
+      width: 50%;
+      height: 2rem;
+      margin: auto;
+    }
+  }
+}
