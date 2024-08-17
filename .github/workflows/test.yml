@@ -1,0 +1,47 @@
+name: Testing
+on: push
+env:
+  APP_KEY: ${{ secrets.APP_KEY }}
+  APP_ENV: ${{ secrets.APP_ENV }}
+  DB_CONNECTION: ${{ secrets.DB_CONNECTION }}
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_PORT: ${{ secrets.DB_PORT }}
+  DB_DATABASE: ${{ secrets.DB_DATABASE }}
+  MAIL_MAILER: ${{ secrets.MAIL_MAILER }}
+  MAIL_HOST: ${{ secrets.MAIL_HOST }}
+  MAIL_PORT: ${{ secrets.MAIL_PORT }}
+jobs:
+  testing:
+    name: Testing
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:11.4.2
+        env:
+          MARIADB_DATABASE: ${{ secrets.DB_DATABASE }}
+        ports:
+          - 3306:3306
+      mailpit:
+        image: axllent/mailpit:v1.19.3
+        ports:
+          - 1025:1025
+    steps:
+      - id: checkout
+        name: Checkout this repository
+        uses: actions/checkout@v4
+      - id: setup
+        name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+      - id: install
+        name: Install dependencies
+        run: composer install
+      - id: test
+        name: Run tests
+        run: |
+          php artisan migrate
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan test

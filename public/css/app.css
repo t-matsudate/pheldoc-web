@@ -17,6 +17,13 @@ p {
   line-height: 1.5;
 }
 
+ul {
+  margin: 0 1rem;
+}
+ul li {
+  margin: 1rem 0;
+}
+
 main {
   padding: 2rem;
 }
@@ -40,4 +47,15 @@ main > :not(:last-child) {
   width: 50%;
   height: 2rem;
   margin: auto;
+}
+
+#search ul {
+  list-style: none;
+}
+
+#function_show #description {
+  padding: 1rem;
+}
+#function_show ul {
+  list-style: none;
 }
