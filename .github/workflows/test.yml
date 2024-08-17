@@ -7,6 +7,7 @@ env:
   DB_HOST: ${{ secrets.DB_HOST }}
   DB_PORT: ${{ secrets.DB_PORT }}
   DB_DATABASE: ${{ secrets.DB_DATABASE }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
   MAIL_MAILER: ${{ secrets.MAIL_MAILER }}
   MAIL_HOST: ${{ secrets.MAIL_HOST }}
   MAIL_PORT: ${{ secrets.MAIL_PORT }}
@@ -16,9 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mariadb:
-        image: mariadb:11.4.2
+        image: mariadb:11.5.2
         env:
           MARIADB_DATABASE: ${{ secrets.DB_DATABASE }}
+          MARIADB_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
         ports:
           - 3306:3306
       mailpit:
