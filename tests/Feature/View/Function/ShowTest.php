@@ -15,7 +15,11 @@ class ShowTest extends TestCase
         $count = fake()->randomNumber(2);
         $function = PhelFunction::factory()
             ->for(PhelNamespace::factory())
-            ->has(UsageExample::factory()->for(User::factory())->count($count))
+            ->create();
+        $examples = UsageExample::factory()
+            ->for($function)
+            ->for(User::factory())
+            ->count($count)
             ->create();
         $contents = $this->view('function.show', [
             'function' => $function
@@ -24,7 +28,7 @@ class ShowTest extends TestCase
         $contents->assertSee($function->phelNamespace->namespace . '/' . $function->name);
         $contents->assertSee($count . '&nbsp;examples.', false);
 
-        foreach ($function->usageExamples as $example) {
+        foreach ($examples as $example) {
             $contents->assertSee('id="' . $example->id . '"', false);
         }
     }
