@@ -8,9 +8,9 @@ use Illuminate\Http\Response;
 
 class NotFoundException extends Exception
 {
-    public function __construct(private string $message)
+    public function __construct(private string $context, private string $item)
     {
-        parent::__construct($message);
+        parent::__construct("$context: $item didn't find.");
     }
     
     public function report(): void

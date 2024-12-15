@@ -1,0 +1,47 @@
+{
+  "__commonjsHelpers-CqkleIqs.js": {
+    "file": "assets/_commonjsHelpers-CqkleIqs.js",
+    "name": "_commonjsHelpers"
+  },
+  "_clojure--UGSwFml.js": {
+    "file": "assets/clojure--UGSwFml.js",
+    "name": "clojure",
+    "imports": [
+      "__commonjsHelpers-CqkleIqs.js"
+    ]
+  },
+  "resources/scss/app.scss": {
+    "file": "assets/app-BiZIY80g.css",
+    "src": "resources/scss/app.scss",
+    "isEntry": true
+  },
+  "resources/ts/Document.ts": {
+    "file": "assets/Document-CHAP6Qpg.js",
+    "name": "Document",
+    "src": "resources/ts/Document.ts",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-CqkleIqs.js"
+    ]
+  },
+  "resources/ts/Highlight.ts": {
+    "file": "assets/Highlight-DhIdR2XV.js",
+    "name": "Highlight",
+    "src": "resources/ts/Highlight.ts",
+    "isEntry": true,
+    "imports": [
+      "_clojure--UGSwFml.js",
+      "__commonjsHelpers-CqkleIqs.js"
+    ]
+  },
+  "resources/ts/UsageExample.tsx": {
+    "file": "assets/UsageExample-fsgm3LKS.js",
+    "name": "UsageExample",
+    "src": "resources/ts/UsageExample.tsx",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-CqkleIqs.js",
+      "_clojure--UGSwFml.js"
+    ]
+  }
+}

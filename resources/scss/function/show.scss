@@ -1,9 +1,14 @@
-#function_show {
+@mixin function-detail {
   #description {
+    width: calc(100% - 2rem);
     padding: 1rem;
   }
 
   ul {
     list-style: none;
   }
+}
+
+#function_show {
+  @include function-detail;
 }

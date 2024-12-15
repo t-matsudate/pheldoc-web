@@ -1,0 +1,5 @@
+@use "create";
+
+#function_draft_edit {
+  @include draft-form;
+}

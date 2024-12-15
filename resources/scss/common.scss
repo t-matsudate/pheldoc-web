@@ -1,3 +1,11 @@
+$theme-phel-background-color: hsl(257, 57%, 41%);
+$theme-phel-color: hsl(0, 100%, 100%);
+
+@mixin phel-theme {
+  background-color: $theme-phel-background-color;
+  color: $theme-phel-color;
+}
+
 * {
   margin: 0;
   padding: 0;

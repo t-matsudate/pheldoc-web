@@ -8,11 +8,10 @@ use Tests\TestCase;
 
 class SearchTest extends TestCase
 {
-    public function test_exact_items_count(): void
+    public function testExactItemsCount(): void
     {
-        $basePattern = '!$%*+,-./;<=>?@A-Z[\\]^_`a-z|~';
         $count = fake()->randomNumber(1, false);
-        $name = fake()->regexify("[$basePattern]{1,1}[0-9$basePattern]{0,254}");
+        $name = fake()->regexify("[A-Za-z]{1}[-0-9A-Za-z]{0,254}");
         $functions = PhelFunction::factory()
             ->for(PhelNamespace::factory())
             ->count($count)

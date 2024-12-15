@@ -1,0 +1,5 @@
+@use "../show";
+
+#function_draft_show {
+  @include show.function-detail;
+}
