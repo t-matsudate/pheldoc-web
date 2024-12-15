@@ -6,7 +6,8 @@ This aims to maintain and to extend own contents by the community.
 ## Features
 
 - [x] Searching and detailing Phel's function.
-- [ ] Registering users and Phel's functions.
+- [x] Registering Phel's functions as drafts.
+- [ ] Registering Users.
 
 ## LICENSE
 
