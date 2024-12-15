@@ -17,33 +17,41 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mariadb:
-        image: mariadb:11.5.2
+        image: mariadb:11.6.2
         env:
           MARIADB_DATABASE: ${{ secrets.DB_DATABASE }}
           MARIADB_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
         ports:
           - 3306:3306
       mailpit:
-        image: axllent/mailpit:v1.20.2
+        image: axllent/mailpit:v1.21.7
         ports:
           - 1025:1025
     steps:
       - id: checkout
         name: Checkout this repository
         uses: actions/checkout@v4
-      - id: setup
+      - id: setup-php
         name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
           tools: composer
+      - id: setup-node
+        name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: node
       - id: install
         name: Install dependencies
-        run: composer install
+        run: |
+          npm install
+          composer install
       - id: test
         name: Run tests
         run: |
           php artisan migrate
           php artisan config:clear
           php artisan cache:clear
+          npm run build
           php artisan test
